@@ -25,14 +25,14 @@ var stringifyJSON = function(obj
 
   // if its an array []
   if (Array.isArray(obj)) {
-    if (obj.length === 0){
+    if (obj.length === 0) {
       return '[]';
     }
     for (var i = 0; i < obj.length; i++) {
       results.push(stringifyJSON(obj[i]));
     }
     //
-    return "[" + results + "]";
+    return '[' + results + ']';
   }
   
   // type of is an object {}
@@ -41,9 +41,9 @@ var stringifyJSON = function(obj
       if (typeof obj[key] === 'function' || obj[key] === undefined) {
         break;
       }
-      results.push(stringifyJSON(key) + ":" + stringifyJSON(obj[key]));
+      results.push(stringifyJSON(key) + ':' + stringifyJSON(obj[key]));
     }
-    return "{" + results + "}";
+    return '{' + results + '}';
   }
   
 
